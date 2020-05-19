@@ -18,7 +18,7 @@ public class LCInitializer extends AbstractAnnotationConfigDispatcherServletInit
 
 	@Override
 	protected String[] getServletMappings() {
-		String array[] = {"/home.com/*"};
+		String array[] = {"/home.com/*", "/"};
 		return array;
 	}
 
