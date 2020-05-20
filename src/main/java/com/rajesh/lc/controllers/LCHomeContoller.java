@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.rajesh.lc.api.RegistrationInfoDTO;
 import com.rajesh.lc.api.UserInfoDTO;
 
 @Controller
@@ -22,6 +23,17 @@ public class LCHomeContoller {
 		
 //		model.addAttribute("objectReference", userinfo);
 		return "results-page";
-		
+	}
+	
+	@RequestMapping("/register")
+	public String registerPage(@ModelAttribute("regInfo") RegistrationInfoDTO regInfo) {
+		return "register";
+	}
+	
+	@RequestMapping("/registrationSuccessful")
+	public String registrationSuccessful(@ModelAttribute("registrationInfoObj") RegistrationInfoDTO obj) {
+//		RegistrationInfoDTO obj = new RegistrationInfoDTO();
+//		model.addAttribute("registrationInfo", obj);
+		return "registration-completed";
 	}
 }
